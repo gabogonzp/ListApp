@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListApp.EditTask">
+    <StackLayout BackgroundColor="#B1E3FF">
+        <Label Text="Editar tarea"
+               FontSize="32"
+               TextColor="#004C93"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"
+               FontAttributes="Bold" />
+        <Frame VerticalOptions="StartAndExpand"
+               BackgroundColor="#FAFEFF"
+               HasShadow="True"
+               Margin="20"
+               CornerRadius="16">
+            <StackLayout  Margin="10,10">
+                <Entry Placeholder="Tarea"
+                       FontSize="22"
+                       Margin="20,10,10,5"
+                       FontFamily="sans-serif, Jost"
+                       x:Name="taskEdit"
+                        />
+                <Button BackgroundColor="#004C93"
+                        Margin="20,20"
+                        Opacity="70"
+                        HeightRequest="65"
+                        CornerRadius="14"
+                        Text="Listo"
+                        TextColor="White"
+                        x:Name="Editar" 
+                        Clicked="Editar_Clicked"/>
+                <Button Text="Volver"
+                       Margin="25,0,0,0"
+                       HorizontalOptions="Start"
+                       BackgroundColor="White"
+                       TextColor="#004C93"
+                       x:Name="Volver"
+                        Clicked="Volver_Clicked"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

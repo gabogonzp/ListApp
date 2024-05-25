@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListApp.MainPage">
+    <StackLayout BackgroundColor="#B1E3FF">
+        <Label Text="Lista de tareas"
+               FontSize="32"
+               TextColor="#004C93"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"
+               FontAttributes="Bold" />
+        <Frame VerticalOptions="FillAndExpand"
+               BackgroundColor="#FAFEFF"
+               HasShadow="False"
+               Margin="20"
+               CornerRadius="16">
+            <StackLayout  Margin="10,10">
+                <CollectionView x:Name="myCollectionView"
+                                SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Eliminar"
+                                                   BackgroundColor="#004C93"
+                                                   CommandParameter="{Binding .}"
+                                                   Invoked="SwipeItem_InvokedDelete" />
+                                        <SwipeItem Text="Editar"
+                                                   BackgroundColor="AliceBlue"
+                                                   CommandParameter="{Binding .}"
+                                                   Invoked="SwipeItem_Invoked" />
+                                        
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition Width="*"/>
+                                         
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="♥"
+                                           FontSize="20"
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center" />
+                                    <Label Text="{Binding Task}"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontSize="20"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="CenterAndExpand"
+                                           Margin="0,10,0,0" />
+                                </Grid>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button BackgroundColor="#004C93"
+                        Margin="20,20"
+                        Opacity="70"
+                        HeightRequest="50"
+                        WidthRequest="30"
+                        CornerRadius="60"
+                        VerticalOptions="EndAndExpand"
+                        Text="Agregar tarea"
+                        FontAttributes="Bold"
+                        TextColor="#FAFEFF"
+                        x:Name="Agrega"
+                        Clicked="Agrega_Clicked" />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
